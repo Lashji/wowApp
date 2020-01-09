@@ -1,0 +1,6 @@
+.mainContainer {
+    display: grid;
+    height: 100vh;
+    background-color: #f6f6f6;
+    grid-template-columns: 7% auto;
+}
