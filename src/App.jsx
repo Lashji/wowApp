@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
+import axios from "axios";
 
 import MainContainer from "./main-container/main-container.component";
 
@@ -10,10 +11,26 @@ class App extends Component {
     super();
   }
 
+
+  getToken = () => {
+    return axios.get(`https://eu.battle.net/oauth/token`, {
+        auth: {
+          username: process.env.REACT_APP_CLIENT_ID,
+          password: process.env.REACT_APP_CLIENT_SECRET,
+        },
+        params: {
+          grant_type: 'client_credentials',
+        }
+    }).then(response => console.log(response))
+  }
+
   componentDidMount() {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then(res => res.json())
-      .then(res => console.log(res));
+    // fetch("https://jsonplaceholder.typicode.com/users")
+    //   .then(res => res.json())
+      // .then(res => console.log(res));
+
+      const url = ""
+      this.getToken()
   }
 
   render() {
