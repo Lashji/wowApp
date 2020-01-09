@@ -1,0 +1,6 @@
+.navBar {
+    display: grid;
+    background-color: #333;
+    color: white;
+    grid-template-columns: auto auto auto auto auto;
+}
