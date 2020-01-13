@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
-
+import { getToken } from "./api/apiHandler";
 import MainContainer from "./main-container/main-container.component";
 
 class App extends Component {
@@ -9,28 +9,15 @@ class App extends Component {
 
   constructor() {
     super();
-  }
-
-
-  getToken = () => {
-    return axios.get(`https://eu.battle.net/oauth/token`, {
-        auth: {
-          username: process.env.REACT_APP_CLIENT_ID,
-          password: process.env.REACT_APP_CLIENT_SECRET,
-        },
-        params: {
-          grant_type: 'client_credentials',
-        }
-    }).then(response => console.log(response))
+    this.state = {};
   }
 
   componentDidMount() {
-    // fetch("https://jsonplaceholder.typicode.com/users")
-    //   .then(res => res.json())
-      // .then(res => console.log(res));
-
-      const url = ""
-      this.getToken()
+    const url = "";
+    getToken().then(res => {
+      console.log("res =>  ", res);
+      this.setState({ token: res });
+    });
   }
 
   render() {
@@ -41,5 +28,6 @@ class App extends Component {
     );
   }
 }
+2;
 
 export default App;
