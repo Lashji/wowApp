@@ -1,3 +1,6 @@
 .sideBar {
-    background-color: grey;
+    background-color: #071D49;
+    color: white;
+    display: grid;
+    justify-content: center;
 }

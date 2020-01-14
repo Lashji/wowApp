@@ -1,33 +1,25 @@
 import React, { Component } from "react";
 import "./App.css";
-import axios from "axios";
-import { getToken } from "./api/apiHandler";
+import { getToken } from "./api/ApiHandler";
 import MainContainer from "./main-container/main-container.component";
+import { AppProvider } from "./api/AppProvider";
 
 class App extends Component {
   BASE_URL = process.env.REACT_APP_BASE_URL;
 
-  constructor() {
-    super();
-    this.state = {};
-  }
-
-  componentDidMount() {
-    const url = "";
-    getToken().then(res => {
-      console.log("res =>  ", res);
-      this.setState({ token: res });
-    });
+  constructor(props) {
+    super(props);
   }
 
   render() {
     return (
       <div className="App">
-        <MainContainer></MainContainer>
+        <AppProvider>
+          <MainContainer></MainContainer>
+        </AppProvider>
       </div>
     );
   }
 }
-2;
 
 export default App;
