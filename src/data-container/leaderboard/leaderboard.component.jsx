@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { AppContext } from "../../api/AppProvider";
 
 const Container = styled.div`
-  background-color: white;
+  background-color: steelblue;
 `
 
 export default () => {

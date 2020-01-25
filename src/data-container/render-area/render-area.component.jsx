@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 
 const Container = styled.div`
-    background-color: red;
+    background-color: #333 ;
     min-height: 100%;
 `
 
