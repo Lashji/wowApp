@@ -1,7 +1,9 @@
 .dataContainer {
     display: grid;
     margin: 50px auto;
+    margin-bottom: 20px;
     background-color: cadetblue;
+    /* min-height: 100%; */
     width: 90%;
     grid-template-rows: 5% auto;
 }
