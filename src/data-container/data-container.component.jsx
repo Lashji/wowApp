@@ -4,6 +4,7 @@ import NavBar from "./data-navbar/data-navbar.component";
 import DataArea from "./data-area/data-area.component";
 import { AppContext } from "../api/AppProvider";
 
+
 class DataContainer extends Component {
   constructor() {
     super();

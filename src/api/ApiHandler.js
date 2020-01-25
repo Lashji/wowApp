@@ -1,6 +1,7 @@
 import axios from "axios"
 
 export const getToken = () => {
+    console.log("getting token")
     return axios.get(`https://eu.battle.net/oauth/token`, {
         auth: {
             username: process.env.REACT_APP_CLIENT_ID,
@@ -40,7 +41,7 @@ export async function doCharRequest(
 
 export async function getPVPLeaderBoard(token) {
     let href = "https://eu.api.blizzard.com/data/wow/pvp-season/27/pvp-leaderboard/3v3?namespace=dynamic-eu&locale=en_US"
-    console.log(token.access_token)
+    console.log("token: ", token.access_token)
     return await axios.get(href, {
             headers: {
                 Authorization: 'Bearer ' + token.access_token
