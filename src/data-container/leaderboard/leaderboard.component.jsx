@@ -10,15 +10,14 @@ export default () => {
   return (
     <AppContext.Consumer>
       {({ leaderboard }) => {
-        // return <Container></Container>;
         console.log("leaderboard: ", leaderboard);
         if (!leaderboard) return <div>LOADING LEADERBOARD</div>;
-        let slicedData = leaderboard[0].players;
-        console.log("slicedData", slicedData);
 
-        return slicedData.map(c => (
+        const lb = leaderboard.map(c => (
           <LeaderboardItem key={c.general.id} player={c} />
         ));
+
+        return <Container>{lb}</Container>;
       }}
     </AppContext.Consumer>
   );

@@ -9,14 +9,10 @@ export class AppProvider extends React.Component {
     this.state = {};
   }
 
-  // getData = async () => {
-  //   return await getData("3v3");
-  // };
-
   async buildLeaderboard(response) {
-    console.log("building leaderboard", response);
+    console.log("building leaderboard", response.data[0].players);
     this.setState({
-      leaderboard: response.data
+      leaderboard: response.data[0].players
     });
   }
 

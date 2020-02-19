@@ -17,16 +17,12 @@ class DataArea extends Component {
   render() {
     return (
       <AppContext.Consumer>
-        {({ leaderboard }) => {
-          if (!leaderboard) return <div>LOADING</div>;
-
+        {({}) => {
           return (
-            <div className="dataArea">
-              <Container>
-                <Leaderboard />
-                <RenderArea />
-              </Container>
-            </div>
+            <Container>
+              <Leaderboard />
+              <RenderArea />
+            </Container>
           );
         }}
       </AppContext.Consumer>
