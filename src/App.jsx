@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-import { getToken } from "./api/ApiHandler";
 import MainContainer from "./main-container/main-container.component";
 import { AppProvider } from "./api/AppProvider";
 

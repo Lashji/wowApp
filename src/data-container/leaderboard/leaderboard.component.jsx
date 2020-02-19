@@ -1,31 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 import { AppContext } from "../../api/AppProvider";
-
+import LeaderboardItem from "./leaderboard-item/leaderboard-item.component";
 const Container = styled.div`
   background-color: steelblue;
-`
+`;
 
 export default () => {
   return (
     <AppContext.Consumer>
-      {({ leaderboard3 }) => {
-      
-      return (
-        <Container></Container>
-      )
-      
-        // if (!leaderboard3) return <div>LOADING LEADERBOARD</div>;
-        // let slicedData = leaderboard3.slice(0, 10);
-        // console.log(slicedData);
-        // let d = slicedData.map(c => {
-        //   return [c.character.name, c.rank];
-        // });
-        // return d.map(c => (
-        //   <div key={c}>
-        //     {c[1]} - {c[0]}
-        //   </div>
-        // ));
+      {({ leaderboard }) => {
+        // return <Container></Container>;
+        console.log("leaderboard: ", leaderboard);
+        if (!leaderboard) return <div>LOADING LEADERBOARD</div>;
+        let slicedData = leaderboard[0].players;
+        console.log("slicedData", slicedData);
+
+        return slicedData.map(c => (
+          <LeaderboardItem key={c.general.id} player={c} />
+        ));
       }}
     </AppContext.Consumer>
   );
