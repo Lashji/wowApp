@@ -13,9 +13,9 @@ export default () => {
         console.log("leaderboard: ", leaderboard);
         if (!leaderboard) return <div>LOADING LEADERBOARD</div>;
 
-        const lb = leaderboard.map(c => (
-          <LeaderboardItem key={c.general.id} player={c} />
-        ));
+        const lb = leaderboard
+          .filter(c => c.general !== undefined)
+          .map(c => <LeaderboardItem key={c.general.id} player={c} />);
 
         return <Container>{lb}</Container>;
       }}

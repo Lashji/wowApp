@@ -1,5 +1,5 @@
 import React from "react";
-
+import styled from "styled-components";
 const LeaderboardItem = ({ player }) => {
   const { name, rank } = player.general;
 
@@ -7,7 +7,7 @@ const LeaderboardItem = ({ player }) => {
   return (
     <div>
       <p>
-        {rank} - Name: {name}
+        {rank} - {name}
       </p>
     </div>
   );
