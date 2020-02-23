@@ -6,4 +6,7 @@
     /* min-height: 100%; */
     width: 90%;
     grid-template-rows: 5% auto;
+    -webkit-box-shadow: 2px 4px 21px 9px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 2px 4px 21px 9px rgba(0, 0, 0, 0.75);
+    box-shadow: 2px 4px 21px 9px rgba(0, 0, 0, 0.75);
 }

@@ -9,10 +9,10 @@ const Container = styled.div`
 export default () => {
   return (
     <AppContext.Consumer>
-      {({ leaderboard }) => {
+      {({ leaderboard, specIcons }) => {
         console.log("leaderboard: ", leaderboard);
-        if (!leaderboard) return <div>LOADING LEADERBOARD</div>;
-
+        if (!leaderboard || !specIcons) return <div>LOADING LEADERBOARD</div>;
+        console.log("specicons in lb", specIcons);
         const lb = leaderboard
           .filter(c => c.general !== undefined)
           .map(c => <LeaderboardItem key={c.general.id} player={c} />);

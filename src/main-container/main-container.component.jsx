@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./main-container.scss";
-import SideBar from "../side-bar/side-bar.component";
+import SideBar from "../sidebar/sidebar.component";
 import DataContainer from "../data-container/data-container.component";
 import { AppContext } from "../api/AppProvider";
 
